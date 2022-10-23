@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StudentInformationSystemDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="IndividualDetail" Relationship="Self.FK_IndividualDetail_Address" FromRole="Address" ToRole="IndividualDetail" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="IndividualDetail" Relationship="Self.FK_IndividualDetail_Country" FromRole="Country" ToRole="IndividualDetail" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentDetailID" Type="Int32" />
+    <Property Name="FacultyID" Type="Int32" />
+    <NavigationProperty Name="Department1" Relationship="Self.FK_Department_Department" FromRole="Department" ToRole="Department1" />
+    <NavigationProperty Name="Department2" Relationship="Self.FK_Department_Department" FromRole="Department1" ToRole="Department" />
+    <NavigationProperty Name="Department11" Relationship="Self.FK_Department_Department1" FromRole="Department" ToRole="Department1" />
+    <NavigationProperty Name="Department3" Relationship="Self.FK_Department_Department1" FromRole="Department1" ToRole="Department" />
+    <NavigationProperty Name="DepartmentDetail" Relationship="Self.FK_Department_DepartmentDetail" FromRole="Department" ToRole="DepartmentDetail" />
+    <NavigationProperty Name="Faculty" Relationship="Self.FK_Department_Faculty" FromRole="Department" ToRole="Faculty" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_Student_Department" FromRole="Department" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="DepartmentDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HeadIndividualID" Type="Int32" />
+    <Property Name="VicePresidentIndividualID" Type="Int32" />
+    <Property Name="DepartmentDuration" Type="Int32" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Department_DepartmentDetail" FromRole="DepartmentDetail" ToRole="Department" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="District1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="IndividualDetail" Relationship="Self.FK_IndividualDetail_District" FromRole="District" ToRole="IndividualDetail" />
+  </EntityType>
+  <EntityType Name="EMail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMail1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="IndividualDetail" Relationship="Self.FK_IndividualDetail_Email" FromRole="EMail" ToRole="IndividualDetail" />
+  </EntityType>
+  <EntityType Name="Faculty">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FacultyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FacultyDetailID" Type="Int32" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Department_Faculty" FromRole="Faculty" ToRole="Department" />
+    <NavigationProperty Name="FacultyDetail" Relationship="Self.FK_Faculty_FacultyDetail" FromRole="Faculty" ToRole="FacultyDetail" />
+  </EntityType>
+  <EntityType Name="FacultyDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HeadIndividualID" Type="Int32" />
+    <Property Name="VicePresidentIndividualID" Type="Int32" />
+    <NavigationProperty Name="Faculty" Relationship="Self.FK_Faculty_FacultyDetail" FromRole="FacultyDetail" ToRole="Faculty" />
+  </EntityType>
+  <EntityType Name="Individual">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IndividualDetailID" Type="Int32" />
+    <NavigationProperty Name="IndividualDetail" Relationship="Self.FK_Individual_IndidividualDetail" FromRole="Individual" ToRole="IndividualDetail" />
+    <NavigationProperty Name="Individual1" Relationship="Self.FK_Individual_Individual" FromRole="Individual" ToRole="Individual1" />
+    <NavigationProperty Name="Individual2" Relationship="Self.FK_Individual_Individual" FromRole="Individual1" ToRole="Individual" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_Student_Individual" FromRole="Individual" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="IndividualDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdentificationNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="NationalityID" Type="Int32" />
+    <Property Name="PhoneNumberID" Type="Int32" />
+    <Property Name="AddressID" Type="Int32" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="DistrictID" Type="Int32" />
+    <Property Name="PostCodeID" Type="Int32" />
+    <Property Name="EMailID" Type="Int32" />
+    <NavigationProperty Name="Address" Relationship="Self.FK_IndividualDetail_Address" FromRole="IndividualDetail" ToRole="Address" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_IndividualDetail_Country" FromRole="IndividualDetail" ToRole="Country" />
+    <NavigationProperty Name="District" Relationship="Self.FK_IndividualDetail_District" FromRole="IndividualDetail" ToRole="District" />
+    <NavigationProperty Name="EMail" Relationship="Self.FK_IndividualDetail_Email" FromRole="IndividualDetail" ToRole="EMail" />
+    <NavigationProperty Name="Individual" Relationship="Self.FK_Individual_IndidividualDetail" FromRole="IndividualDetail" ToRole="Individual" />
+    <NavigationProperty Name="IndividualDetail1" Relationship="Self.FK_IndividualDetail_IndividualDetail" FromRole="IndividualDetail" ToRole="IndividualDetail1" />
+    <NavigationProperty Name="IndividualDetail2" Relationship="Self.FK_IndividualDetail_IndividualDetail" FromRole="IndividualDetail1" ToRole="IndividualDetail" />
+    <NavigationProperty Name="IndividualDetail11" Relationship="Self.FK_IndividualDetail_IndividualDetail1" FromRole="IndividualDetail" ToRole="IndividualDetail1" />
+    <NavigationProperty Name="IndividualDetail3" Relationship="Self.FK_IndividualDetail_IndividualDetail1" FromRole="IndividualDetail1" ToRole="IndividualDetail" />
+    <NavigationProperty Name="IndividualDetail12" Relationship="Self.FK_IndividualDetail_IndividualDetail2" FromRole="IndividualDetail" ToRole="IndividualDetail1" />
+    <NavigationProperty Name="IndividualDetail4" Relationship="Self.FK_IndividualDetail_IndividualDetail2" FromRole="IndividualDetail1" ToRole="IndividualDetail" />
+    <NavigationProperty Name="Nationality" Relationship="Self.FK_IndividualDetail_Nationality" FromRole="IndividualDetail" ToRole="Nationality" />
+    <NavigationProperty Name="PhoneNumber" Relationship="Self.FK_IndividualDetail_PhoneNumber" FromRole="IndividualDetail" ToRole="PhoneNumber" />
+    <NavigationProperty Name="PostCode" Relationship="Self.FK_IndividualDetail_PostCode" FromRole="IndividualDetail" ToRole="PostCode" />
+  </EntityType>
+  <EntityType Name="Nationality">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nationality1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="IndividualDetail" Relationship="Self.FK_IndividualDetail_Nationality" FromRole="Nationality" ToRole="IndividualDetail" />
+  </EntityType>
+  <EntityType Name="PhoneNumber">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="IndividualDetail" Relationship="Self.FK_IndividualDetail_PhoneNumber" FromRole="PhoneNumber" ToRole="IndividualDetail" />
+  </EntityType>
+  <EntityType Name="PostCode">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PostCode1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="IndividualDetail" Relationship="Self.FK_IndividualDetail_PostCode" FromRole="PostCode" ToRole="IndividualDetail" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IndividualID" Type="Int32" />
+    <Property Name="StudentNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Class" Type="Int32" />
+    <Property Name="StudentDetailID" Type="Int32" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Student_Department" FromRole="Student" ToRole="Department" />
+    <NavigationProperty Name="Individual" Relationship="Self.FK_Student_Individual" FromRole="Student" ToRole="Individual" />
+    <NavigationProperty Name="Student1" Relationship="Self.FK_Student_Student" FromRole="Student" ToRole="Student1" />
+    <NavigationProperty Name="Student2" Relationship="Self.FK_Student_Student" FromRole="Student1" ToRole="Student" />
+    <NavigationProperty Name="Student11" Relationship="Self.FK_Student_Student1" FromRole="Student" ToRole="Student1" />
+    <NavigationProperty Name="Student3" Relationship="Self.FK_Student_Student1" FromRole="Student1" ToRole="Student" />
+    <NavigationProperty Name="Student12" Relationship="Self.FK_Student_Student2" FromRole="Student" ToRole="Student1" />
+    <NavigationProperty Name="Student4" Relationship="Self.FK_Student_Student2" FromRole="Student1" ToRole="Student" />
+    <NavigationProperty Name="StudentDetail" Relationship="Self.FK_Student_StudentDetail" FromRole="Student" ToRole="StudentDetail" />
+  </EntityType>
+  <EntityType Name="StudentDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumberOfActiveSemesterCourseRegistrations" Type="Int32" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_Student_StudentDetail" FromRole="StudentDetail" ToRole="Student" />
+  </EntityType>
+  <Association Name="FK_IndividualDetail_Address">
+    <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+    <End Role="IndividualDetail" Type="Self.IndividualDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IndividualDetail">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IndividualDetail_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="IndividualDetail" Type="Self.IndividualDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IndividualDetail">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Department1" Type="Self.Department" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Department1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_Department1">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Department1" Type="Self.Department" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Department1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_DepartmentDetail">
+    <End Role="DepartmentDetail" Type="Self.DepartmentDetail" Multiplicity="0..1" />
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="DepartmentDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_Faculty">
+    <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="FacultyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IndividualDetail_District">
+    <End Role="District" Type="Self.District" Multiplicity="0..1" />
+    <End Role="IndividualDetail" Type="Self.IndividualDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IndividualDetail">
+        <PropertyRef Name="DistrictID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IndividualDetail_Email">
+    <End Role="EMail" Type="Self.EMail" Multiplicity="0..1" />
+    <End Role="IndividualDetail" Type="Self.IndividualDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IndividualDetail">
+        <PropertyRef Name="EMailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Faculty_FacultyDetail">
+    <End Role="FacultyDetail" Type="Self.FacultyDetail" Multiplicity="0..1" />
+    <End Role="Faculty" Type="Self.Faculty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FacultyDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Faculty">
+        <PropertyRef Name="FacultyDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Individual_IndidividualDetail">
+    <End Role="IndividualDetail" Type="Self.IndividualDetail" Multiplicity="0..1" />
+    <End Role="Individual" Type="Self.Individual" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IndividualDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Individual">
+        <PropertyRef Name="IndividualDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Individual_Individual">
+    <End Role="Individual" Type="Self.Individual" Multiplicity="1" />
+    <End Role="Individual1" Type="Self.Individual" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Individual">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Individual1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Individual">
+    <End Role="Individual" Type="Self.Individual" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Individual">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="IndividualID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IndividualDetail_IndividualDetail">
+    <End Role="IndividualDetail" Type="Self.IndividualDetail" Multiplicity="1" />
+    <End Role="IndividualDetail1" Type="Self.IndividualDetail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="IndividualDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IndividualDetail1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IndividualDetail_IndividualDetail1">
+    <End Role="IndividualDetail" Type="Self.IndividualDetail" Multiplicity="1" />
+    <End Role="IndividualDetail1" Type="Self.IndividualDetail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="IndividualDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IndividualDetail1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IndividualDetail_IndividualDetail2">
+    <End Role="IndividualDetail" Type="Self.IndividualDetail" Multiplicity="1" />
+    <End Role="IndividualDetail1" Type="Self.IndividualDetail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="IndividualDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IndividualDetail1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IndividualDetail_Nationality">
+    <End Role="Nationality" Type="Self.Nationality" Multiplicity="0..1" />
+    <End Role="IndividualDetail" Type="Self.IndividualDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nationality">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IndividualDetail">
+        <PropertyRef Name="NationalityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IndividualDetail_PhoneNumber">
+    <End Role="PhoneNumber" Type="Self.PhoneNumber" Multiplicity="0..1" />
+    <End Role="IndividualDetail" Type="Self.IndividualDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhoneNumber">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IndividualDetail">
+        <PropertyRef Name="PhoneNumberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IndividualDetail_PostCode">
+    <End Role="PostCode" Type="Self.PostCode" Multiplicity="0..1" />
+    <End Role="IndividualDetail" Type="Self.IndividualDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostCode">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IndividualDetail">
+        <PropertyRef Name="PostCodeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Student1" Type="Self.Student" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Student1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Student1">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Student1" Type="Self.Student" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Student1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Student2">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Student1" Type="Self.Student" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Student1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_StudentDetail">
+    <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudentDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StudentDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StudentInformationSystemDatabaseEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Address" EntityType="Self.Address" />
+    <EntitySet Name="Country" EntityType="Self.Country" />
+    <EntitySet Name="Department" EntityType="Self.Department" />
+    <EntitySet Name="DepartmentDetail" EntityType="Self.DepartmentDetail" />
+    <EntitySet Name="District" EntityType="Self.District" />
+    <EntitySet Name="EMail" EntityType="Self.EMail" />
+    <EntitySet Name="Faculty" EntityType="Self.Faculty" />
+    <EntitySet Name="FacultyDetail" EntityType="Self.FacultyDetail" />
+    <EntitySet Name="Individual" EntityType="Self.Individual" />
+    <EntitySet Name="IndividualDetail" EntityType="Self.IndividualDetail" />
+    <EntitySet Name="Nationality" EntityType="Self.Nationality" />
+    <EntitySet Name="PhoneNumber" EntityType="Self.PhoneNumber" />
+    <EntitySet Name="PostCode" EntityType="Self.PostCode" />
+    <EntitySet Name="Student" EntityType="Self.Student" />
+    <EntitySet Name="StudentDetail" EntityType="Self.StudentDetail" />
+    <AssociationSet Name="FK_IndividualDetail_Address" Association="Self.FK_IndividualDetail_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="IndividualDetail" EntitySet="IndividualDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IndividualDetail_Country" Association="Self.FK_IndividualDetail_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="IndividualDetail" EntitySet="IndividualDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_Department" Association="Self.FK_Department_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Department1" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_Department1" Association="Self.FK_Department_Department1">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Department1" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_DepartmentDetail" Association="Self.FK_Department_DepartmentDetail">
+      <End Role="DepartmentDetail" EntitySet="DepartmentDetail" />
+      <End Role="Department" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_Faculty" Association="Self.FK_Department_Faculty">
+      <End Role="Faculty" EntitySet="Faculty" />
+      <End Role="Department" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Department" Association="Self.FK_Student_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IndividualDetail_District" Association="Self.FK_IndividualDetail_District">
+      <End Role="District" EntitySet="District" />
+      <End Role="IndividualDetail" EntitySet="IndividualDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IndividualDetail_Email" Association="Self.FK_IndividualDetail_Email">
+      <End Role="EMail" EntitySet="EMail" />
+      <End Role="IndividualDetail" EntitySet="IndividualDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Faculty_FacultyDetail" Association="Self.FK_Faculty_FacultyDetail">
+      <End Role="FacultyDetail" EntitySet="FacultyDetail" />
+      <End Role="Faculty" EntitySet="Faculty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Individual_IndidividualDetail" Association="Self.FK_Individual_IndidividualDetail">
+      <End Role="IndividualDetail" EntitySet="IndividualDetail" />
+      <End Role="Individual" EntitySet="Individual" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Individual_Individual" Association="Self.FK_Individual_Individual">
+      <End Role="Individual" EntitySet="Individual" />
+      <End Role="Individual1" EntitySet="Individual" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Individual" Association="Self.FK_Student_Individual">
+      <End Role="Individual" EntitySet="Individual" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IndividualDetail_IndividualDetail" Association="Self.FK_IndividualDetail_IndividualDetail">
+      <End Role="IndividualDetail" EntitySet="IndividualDetail" />
+      <End Role="IndividualDetail1" EntitySet="IndividualDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IndividualDetail_IndividualDetail1" Association="Self.FK_IndividualDetail_IndividualDetail1">
+      <End Role="IndividualDetail" EntitySet="IndividualDetail" />
+      <End Role="IndividualDetail1" EntitySet="IndividualDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IndividualDetail_IndividualDetail2" Association="Self.FK_IndividualDetail_IndividualDetail2">
+      <End Role="IndividualDetail" EntitySet="IndividualDetail" />
+      <End Role="IndividualDetail1" EntitySet="IndividualDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IndividualDetail_Nationality" Association="Self.FK_IndividualDetail_Nationality">
+      <End Role="Nationality" EntitySet="Nationality" />
+      <End Role="IndividualDetail" EntitySet="IndividualDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IndividualDetail_PhoneNumber" Association="Self.FK_IndividualDetail_PhoneNumber">
+      <End Role="PhoneNumber" EntitySet="PhoneNumber" />
+      <End Role="IndividualDetail" EntitySet="IndividualDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IndividualDetail_PostCode" Association="Self.FK_IndividualDetail_PostCode">
+      <End Role="PostCode" EntitySet="PostCode" />
+      <End Role="IndividualDetail" EntitySet="IndividualDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Student" Association="Self.FK_Student_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Student1" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Student1" Association="Self.FK_Student_Student1">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Student1" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Student2" Association="Self.FK_Student_Student2">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Student1" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_StudentDetail" Association="Self.FK_Student_StudentDetail">
+      <End Role="StudentDetail" EntitySet="StudentDetail" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

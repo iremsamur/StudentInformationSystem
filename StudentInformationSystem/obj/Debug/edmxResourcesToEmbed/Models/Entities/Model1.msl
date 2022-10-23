@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StudentInformationSystemDatabaseModelStoreContainer" CdmEntityContainer="StudentInformationSystemDatabaseEntities1">
+    <EntitySetMapping Name="Address">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Address1" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Country1" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="DepartmentDetailID" ColumnName="DepartmentDetailID" />
+          <ScalarProperty Name="FacultyID" ColumnName="FacultyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentDetail">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.DepartmentDetail">
+        <MappingFragment StoreEntitySet="DepartmentDetail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HeadIndividualID" ColumnName="HeadIndividualID" />
+          <ScalarProperty Name="VicePresidentIndividualID" ColumnName="VicePresidentIndividualID" />
+          <ScalarProperty Name="DepartmentDuration" ColumnName="DepartmentDuration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="District">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.District">
+        <MappingFragment StoreEntitySet="District">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="District1" ColumnName="District" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMail">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.EMail">
+        <MappingFragment StoreEntitySet="EMail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EMail1" ColumnName="EMail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Faculty">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.Faculty">
+        <MappingFragment StoreEntitySet="Faculty">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FacultyName" ColumnName="FacultyName" />
+          <ScalarProperty Name="FacultyDetailID" ColumnName="FacultyDetailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacultyDetail">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.FacultyDetail">
+        <MappingFragment StoreEntitySet="FacultyDetail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HeadIndividualID" ColumnName="HeadIndividualID" />
+          <ScalarProperty Name="VicePresidentIndividualID" ColumnName="VicePresidentIndividualID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Individual">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.Individual">
+        <MappingFragment StoreEntitySet="Individual">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IndividualDetailID" ColumnName="IndividualDetailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IndividualDetail">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.IndividualDetail">
+        <MappingFragment StoreEntitySet="IndividualDetail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdentificationNumber" ColumnName="IdentificationNumber" />
+          <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
+          <ScalarProperty Name="PhoneNumberID" ColumnName="PhoneNumberID" />
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+          <ScalarProperty Name="PostCodeID" ColumnName="PostCodeID" />
+          <ScalarProperty Name="EMailID" ColumnName="EMailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nationality">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.Nationality">
+        <MappingFragment StoreEntitySet="Nationality">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nationality1" ColumnName="Nationality" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhoneNumber">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.PhoneNumber">
+        <MappingFragment StoreEntitySet="PhoneNumber">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostCode">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.PostCode">
+        <MappingFragment StoreEntitySet="PostCode">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PostCode1" ColumnName="PostCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IndividualID" ColumnName="IndividualID" />
+          <ScalarProperty Name="StudentNumber" ColumnName="StudentNumber" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="StudentDetailID" ColumnName="StudentDetailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentDetail">
+      <EntityTypeMapping TypeName="StudentInformationSystemDatabaseModel.StudentDetail">
+        <MappingFragment StoreEntitySet="StudentDetail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NumberOfActiveSemesterCourseRegistrations" ColumnName="NumberOfActiveSemesterCourseRegistrations" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1003d221b504471c85d5a571262552f4" Name="Diagram1">
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.Address" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.Country" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.Department" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.DepartmentDetail" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.District" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.EMail" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.Faculty" Width="1.5" PointX="3" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.FacultyDetail" Width="1.5" PointX="0.75" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.Individual" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.IndividualDetail" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.Nationality" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.PhoneNumber" Width="1.5" PointX="0.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.PostCode" Width="1.5" PointX="0.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.Student" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentInformationSystemDatabaseModel.StudentDetail" Width="1.5" PointX="5.25" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_IndividualDetail_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_IndividualDetail_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Department_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Department_Department1" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Department_DepartmentDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Department_Faculty" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Student_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_IndividualDetail_District" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_IndividualDetail_Email" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Faculty_FacultyDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Individual_IndidividualDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Individual_Individual" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Student_Individual" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_IndividualDetail_IndividualDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_IndividualDetail_IndividualDetail1" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_IndividualDetail_IndividualDetail2" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_IndividualDetail_Nationality" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_IndividualDetail_PhoneNumber" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_IndividualDetail_PostCode" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Student_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Student_Student1" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Student_Student2" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentInformationSystemDatabaseModel.FK_Student_StudentDetail" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
