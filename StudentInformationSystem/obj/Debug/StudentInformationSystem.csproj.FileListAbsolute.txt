@@ -80,3 +80,4 @@ C:\Users\User\Desktop\UpSchoolBootcamp\StudentInformationSystem\StudentInformati
 C:\Users\User\Desktop\UpSchoolBootcamp\StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.csproj.CopyComplete
 C:\Users\User\Desktop\UpSchoolBootcamp\StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.dll
 C:\Users\User\Desktop\UpSchoolBootcamp\StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.pdb
+C:\Users\User\Desktop\UpSchoolBootcamp\StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.csproj.AssemblyReference.cache
